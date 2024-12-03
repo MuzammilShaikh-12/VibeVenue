@@ -1,0 +1,125 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slick-prev,
+.slick-next {
+    /* Existing base styles */
+    width: 30px !important;
+    height: 30px !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 20 !important;
+
+    /* Deep Shadow Approach with Pop Effect */
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.2),     /* Outer shadow */
+        0 3px 6px rgba(0,0,0,0.15),     /* Mid-level shadow */
+        0 1px 3px rgba(0,0,0,0.1),      /* Inner shadow */
+        inset 0 2px 4px rgba(0,0,0,0.1) !important; /* Inner subtle shadow */
+    border: 1px solid rgba(255,255,255,0.4) !important;
+
+    /* Smooth transition for pop effect */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    /* Enhanced pop effect */
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.25),    /* Enlarged outer shadow */
+        0 5px 10px rgba(0,0,0,0.2),     /* Enlarged mid-level shadow */
+        0 2px 5px rgba(0,0,0,0.15),     /* Enlarged inner shadow */
+        inset 0 3px 6px rgba(0,0,0,0.15) !important; /* Enhanced inner shadow */
+    
+    /* Slight elevation effect */
+    transform: translateY(-50%) scale(1.1) translateZ(10px) !important;
+}
+
+/* Remove default Slick arrows before pseudo-elements */
+.slick-prev::before,
+.slick-next::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-top: 2px solid rgba(255,255,255,0.7) !important;
+  border-right: 2px solid rgba(255,255,255,0.7) !important;
+  opacity: 0.8 !important;
+}
+
+.slick-prev::before {
+  transform: translate(-50%, -50%) rotate(-135deg) !important;
+}
+
+.slick-next::before {
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    /* Enhanced pop effect */
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.25),    /* Enlarged outer shadow */
+        0 5px 10px rgba(0,0,0,0.2),     /* Enlarged mid-level shadow */
+        0 2px 5px rgba(0,0,0,0.15),     /* Enlarged inner shadow */
+        inset 0 3px 6px rgba(0,0,0,0.15) !important; /* Enhanced inner shadow */
+    
+    /* Slight elevation effect */
+    transform: translateY(-50%) scale(1.1) translateZ(10px) !important;
+}
+
+.slick-prev:hover::before,
+.slick-next:hover::before {
+  border-color: #000 !important;
+  opacity: 1 !important;
+}
+
+.slick-prev {
+  left: 3% !important;
+}
+
+.slick-next {
+  right: 3% !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  
+  .slick-prev {
+    left: 5% !important;
+  }
+  
+  .slick-next {
+    right: 5% !important;
+  }
+}
